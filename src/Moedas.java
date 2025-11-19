@@ -1,2 +1,2 @@
-public record Moedas(double usd, double blr) {
+public record Moedas(String origem, String destino, String taxa) {
 }

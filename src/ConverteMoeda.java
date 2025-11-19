@@ -1,3 +1,5 @@
+import com.google.gson.Gson;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -16,6 +18,7 @@ public class ConverteMoeda {
                 .build();
         try {
             HttpResponse<String> response = client.send(requisicao, HttpResponse.BodyHandlers.ofString());
+            return new Gson().fromJson(response.body(), Moedas.class);
         }catch (Exception e) {
             throw new RuntimeException("Não foi possivel consultar esse CEP.");
         }
