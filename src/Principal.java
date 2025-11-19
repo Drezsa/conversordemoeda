@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Principal {
@@ -22,8 +23,13 @@ public class Principal {
             System.out.println("*************************************************************\n");
 
             if (opcao == 1){
-                Moedas novaMoeda = converteMoeda.buscaMoedas(opcao);
-                System.out.println(novaMoeda);
+                try{
+                    Moedas novaMoeda = converteMoeda.buscaMoedas(opcao);
+                    System.out.println(novaMoeda);
+                }catch (RuntimeException | IOException e){
+                    System.out.println(e.getMessage());
+                    System.out.println("Finalizando aplicação");
+                }
             } else if (opcao == 2) {
                 System.out.println("bom");
             }else {

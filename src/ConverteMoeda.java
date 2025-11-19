@@ -1,6 +1,7 @@
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 
 public class ConverteMoeda {
@@ -13,7 +14,10 @@ public class ConverteMoeda {
                 .uri(URI.create(endereco))
                 .GET()
                 .build();
-
-
+        try {
+            HttpResponse<String> response = client.send(requisicao, HttpResponse.BodyHandlers.ofString());
+        }catch (Exception e) {
+            throw new RuntimeException("Não foi possivel consultar esse CEP.");
+        }
     }
 }
