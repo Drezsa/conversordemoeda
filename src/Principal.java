@@ -22,8 +22,8 @@ public class Principal {
                 System.out.println("6- Peso Colombiano =>> Dolar");
                 System.out.println("7- Sair");
                 System.out.println("Escolha uma opção válida: ");
-                opcao = leitura.nextInt();
                 System.out.println("*************************************************************\n");
+                opcao = leitura.nextInt();
 
                 double valor;
                 double resultado;
@@ -32,37 +32,44 @@ public class Principal {
                     System.out.println("Digite o valor que desaja converte: ");
                     valor = leitura.nextDouble();
                     resultado = converteMoeda.converte(valor, taxas.usd(), taxas.ars());
-                    System.out.println("Resultado: " + resultado + " ARS");
+                    System.out.println("Valor " + valor + " [USD] corresponde ao valor final de =>>> " + resultado + " [ARS]");
+                    System.out.println("*************************************************************\n");
                 } else if (opcao == 2) {
                     System.out.println("Digite o valor que desaja converte: ");
                     valor = leitura.nextDouble();
                     resultado = converteMoeda.converte(valor, taxas.ars(), taxas.usd());
-                    System.out.println("Resultado: " + resultado + " USD");
+                    System.out.println("Valor " + valor + " [ARS] corresponde ao valor final de =>>> " + resultado + " [USD]");
+                    System.out.println("*************************************************************\n");
                 } else if (opcao == 3){
                     System.out.println("Digite o valor que desaja converte: ");
                     valor = leitura.nextDouble();
                     resultado = converteMoeda.converte(valor, taxas.usd(), taxas.brl());
-                    System.out.println("Resultado: " + resultado + " BLR");
+                    System.out.println("Valor " + valor + " [USD] corresponde ao valor final de =>>> " + resultado + " [BRL]");
+                    System.out.println("*************************************************************\n");
                 } else if (opcao == 4) {
                     System.out.println("Digite o valor que desaja converte: ");
                     valor = leitura.nextDouble();
                     resultado = converteMoeda.converte(valor, taxas.brl(), taxas.usd());
-                    System.out.println("Resultado: " + resultado + " USD");
+                    System.out.println("Valor " + valor + " [BRL] corresponde ao valor final de =>>> " + resultado + " [USD]");
+                    System.out.println("*************************************************************\n");
                 } else if (opcao == 5) {
                     System.out.println("Digite o valor que desaja converte: ");
                     valor = leitura.nextDouble();
                     resultado = converteMoeda.converte(valor, taxas.usd(), taxas.cop());
-                    System.out.println("Resultado: " + resultado + " COP");
+                    System.out.println("Valor " + valor + " [USD] corresponde ao valor final de =>>> " + resultado + " [COP]");
+                    System.out.println("*************************************************************\n");
                 } else if (opcao == 6) {
                     System.out.println("Digite o valor que desaja converte: ");
                     valor = leitura.nextDouble();
                     resultado = converteMoeda.converte(valor, taxas.cop(), taxas.usd());
-                    System.out.println("Resultado: " + resultado + " USD");
+                    System.out.println("Valor " + valor + " [COP] corresponde ao valor final de =>>> " + resultado + " [USD]");
+                    System.out.println("*************************************************************\n");
                 } else if (opcao == 7) {
                     System.out.println("Saindo...");
                     break;
                 } else {
                     System.out.println("Opção inválida!");
+                    System.out.println("*************************************************************\n");
                 }
             }
 
