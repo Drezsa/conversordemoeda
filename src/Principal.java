@@ -8,8 +8,11 @@ public class Principal {
         System.out.println("****************************************************************");
         System.out.println("SEJA BEM VINDO AO CONVERSOR DE MOEDAS\n");
 
-        int opcao = 0;
+
         try {
+            Moedas taxas = converteMoeda.buscaMoedas();
+            int opcao = 0;
+
             while (opcao != 7) {
                 System.out.println("1- Dolar =>> Peso Argentino");
                 System.out.println("2- Peso Argentino =>> Dolar");
@@ -20,28 +23,32 @@ public class Principal {
                 System.out.println("7- Sair");
                 System.out.println("Escolha uma opção válida: ");
                 opcao = leitura.nextInt();
+                System.out.println("Digite o valor para converter: ");
+                double valor = leitura.nextDouble();
+                double resultado;
                 System.out.println("*************************************************************\n");
 
                 if (opcao == 1) {
-                    Moedas novaMoeda = converteMoeda.buscaMoedas("USD", "ARS");
-                    System.out.println("1 " + novaMoeda.origem() + " = " + novaMoeda.taxa() + " " + novaMoeda.destino());
+                    resultado = converteMoeda.converte(valor, taxas.usd(), taxas.ars());
+                    System.out.println("Resultado: " + resultado + "ARS");
                 } else if (opcao == 2) {
-                    Moedas novaMoeda = converteMoeda.buscaMoedas("ARS", "USD");
-                    System.out.println("1" + novaMoeda.origem() + " = " + novaMoeda.taxa() + " " + novaMoeda.destino());
+                    resultado = converteMoeda.converte(valor, taxas.ars(), taxas.usd());
+                    System.out.println("Resultado: " + resultado + "USD");
                 } else if (opcao == 3){
-                    Moedas novaMoeda = converteMoeda.buscaMoedas("USD", "BRL");
-                    System.out.println("1" + novaMoeda.origem() + " = " + novaMoeda.taxa() + " " + novaMoeda.destino());
+                    resultado = converteMoeda.converte(valor, taxas.usd(), taxas.brl());
+                    System.out.println("Resultado: " + resultado + "BLR");
                 } else if (opcao == 4) {
-                    Moedas novaMoeda = converteMoeda.buscaMoedas("BRL", "USD");
-                    System.out.println("1" + novaMoeda.origem() + " = " + novaMoeda.taxa() + " " + novaMoeda.destino());
+                    resultado = converteMoeda.converte(valor, taxas.brl(), taxas.usd());
+                    System.out.println("Resultado: " + resultado + "USD");
                 } else if (opcao == 5) {
-                    Moedas novaMoeda = converteMoeda.buscaMoedas("USD", "COP");
-                    System.out.println("1" + novaMoeda.origem() + " = " + novaMoeda.taxa() + " " + novaMoeda.destino());
+                    resultado = converteMoeda.converte(valor, taxas.usd(), taxas.cop());
+                    System.out.println("Resultado: " + resultado + "COP");
                 } else if (opcao == 6) {
-                    Moedas novaMoeda = converteMoeda.buscaMoedas("COP", "USD");
-                    System.out.println("1" + novaMoeda.origem() + " = " + novaMoeda.taxa() + " " + novaMoeda.destino());
+                    resultado = converteMoeda.converte(valor, taxas.cop(), taxas.usd());
+                    System.out.println("Resultado: " + resultado + "USD");
                 } else if (opcao == 7) {
                     System.out.println("Saindo...");
+                    break;
                 } else {
                     System.out.println("Opção inválida!");
                 }
