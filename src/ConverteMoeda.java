@@ -9,7 +9,7 @@ import java.net.http.HttpResponse;
 public class ConverteMoeda {
     public Moedas buscaMoedas() {
         String chave = "5ae0f8196aa8f48edb17150b";
-        String endereco = ("https://v6.exchangerate-api.com/v6/" + chave + "/latest/USD");
+        String endereco = "https://v6.exchangerate-api.com/v6/" + chave + "/latest/USD";
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest  requisicao = HttpRequest.newBuilder()
@@ -21,7 +21,7 @@ public class ConverteMoeda {
 
             JsonObject json = JsonParser.parseString(response.body()).getAsJsonObject();
 
-            JsonObject rates = json.getAsJsonObject("Conversion_rates");
+            JsonObject rates = json.getAsJsonObject("conversion_rates");
 
             double usd = rates.get("USD").getAsDouble();
             double brl = rates.get("BRL").getAsDouble();

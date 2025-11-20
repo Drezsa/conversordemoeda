@@ -23,29 +23,41 @@ public class Principal {
                 System.out.println("7- Sair");
                 System.out.println("Escolha uma opção válida: ");
                 opcao = leitura.nextInt();
-                System.out.println("Digite o valor para converter: ");
-                double valor = leitura.nextDouble();
-                double resultado;
                 System.out.println("*************************************************************\n");
 
+                double valor;
+                double resultado;
+
                 if (opcao == 1) {
+                    System.out.println("Digite o valor que desaja converte: ");
+                    valor = leitura.nextDouble();
                     resultado = converteMoeda.converte(valor, taxas.usd(), taxas.ars());
-                    System.out.println("Resultado: " + resultado + "ARS");
+                    System.out.println("Resultado: " + resultado + " ARS");
                 } else if (opcao == 2) {
+                    System.out.println("Digite o valor que desaja converte: ");
+                    valor = leitura.nextDouble();
                     resultado = converteMoeda.converte(valor, taxas.ars(), taxas.usd());
-                    System.out.println("Resultado: " + resultado + "USD");
+                    System.out.println("Resultado: " + resultado + " USD");
                 } else if (opcao == 3){
+                    System.out.println("Digite o valor que desaja converte: ");
+                    valor = leitura.nextDouble();
                     resultado = converteMoeda.converte(valor, taxas.usd(), taxas.brl());
-                    System.out.println("Resultado: " + resultado + "BLR");
+                    System.out.println("Resultado: " + resultado + " BLR");
                 } else if (opcao == 4) {
+                    System.out.println("Digite o valor que desaja converte: ");
+                    valor = leitura.nextDouble();
                     resultado = converteMoeda.converte(valor, taxas.brl(), taxas.usd());
-                    System.out.println("Resultado: " + resultado + "USD");
+                    System.out.println("Resultado: " + resultado + " USD");
                 } else if (opcao == 5) {
+                    System.out.println("Digite o valor que desaja converte: ");
+                    valor = leitura.nextDouble();
                     resultado = converteMoeda.converte(valor, taxas.usd(), taxas.cop());
-                    System.out.println("Resultado: " + resultado + "COP");
+                    System.out.println("Resultado: " + resultado + " COP");
                 } else if (opcao == 6) {
+                    System.out.println("Digite o valor que desaja converte: ");
+                    valor = leitura.nextDouble();
                     resultado = converteMoeda.converte(valor, taxas.cop(), taxas.usd());
-                    System.out.println("Resultado: " + resultado + "USD");
+                    System.out.println("Resultado: " + resultado + " USD");
                 } else if (opcao == 7) {
                     System.out.println("Saindo...");
                     break;
