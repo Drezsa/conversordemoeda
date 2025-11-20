@@ -36,7 +36,7 @@ public class ConverteMoeda {
 
     }
 
-    public static double converte(double valor, double taxaOrigem, double taxaDestino){
+    public double converte(double valor, double taxaOrigem, double taxaDestino){
         return (valor * taxaOrigem) / taxaDestino;
     }
 }
