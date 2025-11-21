@@ -7,9 +7,8 @@ import java.net.http.HttpResponse;
 
 
 public class ConverteMoeda {
-    private String chave;
     public Moedas buscaMoedas() {
-        chave = "";
+        String chave = Config.getApiKey();
         String endereco = "https://v6.exchangerate-api.com/v6/" + chave + "/latest/USD";
 
         HttpClient client = HttpClient.newHttpClient();
