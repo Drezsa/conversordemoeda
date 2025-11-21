@@ -31,8 +31,8 @@ O usuário pode escolher a conversão desejada, informar o valor e o programa ca
 src/
  └── main/
        ├── Principal.java       # Menu e interação com usuário
-       ├── ConverteMoeda.java  # Consulta API e converte valores
-       └── Moedas.java         # Record com taxas de câmbio
+       ├── ConverteMoeda.java   # Consulta API e converte valores
+       └── Moedas.java          # Record com taxas de câmbio
 ---
 
 🔐 Segurança da Chave da API
